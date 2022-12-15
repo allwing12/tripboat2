@@ -1,0 +1,87 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta content="width=device-width, initial-scale=1.0" name="viewport">-->
+
+<!--    <title>ZenBlog Bootstrap Template - Index</title>-->
+<!--    <meta content="" name="description">-->
+<!--    <meta content="" name="keywords">-->
+
+<!--    &lt;!&ndash; Favicons &ndash;&gt;-->
+<!--    <link href="/bootstrap/img/favicon.png" rel="icon">-->
+<!--    <link href="/bootstrap/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+<!--    &lt;!&ndash; Google Fonts &ndash;&gt;-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Vendor CSS Files &ndash;&gt;-->
+<!--    <link href="/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <link href="/bootstrap/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">-->
+<!--    <link href="/bootstrap/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">-->
+<!--    <link href="/bootstrap/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">-->
+<!--    <link href="/bootstrap/vendor/aos/aos.css" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Template Main CSS Files &ndash;&gt;-->
+<!--    <link href="/bootstrap/css/variables.css" rel="stylesheet">-->
+<!--    <link href="/bootstrap/css/main.css" rel="stylesheet">-->
+<!--    <link href="/test_form.css" rel="stylesheet">-->
+<div th:replace="secondnavbar :: secondnavbarfragment"></div>
+<body>
+<div style="width:100%; height:100%; background-color: #fafafa; ">
+    <div th:text="${name}"></div>
+
+    <div style="width:100%; height:100%; border:1px solid red; margin:0; padding:0;">
+        <div style="border:1px solid #e9e9e9; width: 300px; height:500px; margin-left: 150px; margin-bottom: 50px; margin-top:150px; background-color:white; border-radius:5px;">
+            <!--            <div th:inline="text" style="margin-left:28px; margin-top:25px; font-size:20px; font-weight:bold; font-family: 'Do Hyeon', sans-serif; ">안녕하세요 [[${#httpServletRequest.remoteUser}]]님</div>-->
+            <div style="height:60px; margin:auto auto; width:240px; margin-top:20px; margin-bottom: 20px; border:1px solid #e9e9e9; border-radius:5px; background-color:#fafafa;">
+                <a th:href="@{/}" style="margin-left:10px; margin-top:15px; position:absolute; font-family: 'Do Hyeon', sans-serif; font-size:20px;">계정관리</a>
+            </div>
+            <div style="border: 1px solid #e9e9e9; width:240px; height:60px; margin:auto auto; border-radius:5px; background-color:#fafafa;">
+                <a th:href="@{/}" style="margin-left:10px; margin-top:15px; position:absolute; font-family: 'Do Hyeon', sans-serif; font-size:20px;">내 글 관리</a>
+            </div>
+        </div>
+        <div style="border:1px solid #e9e9e9; width: 800px; height: 800px; margin-left: 550px; margin-right:auto; margin-bottom:150px; margin-top:-550px; background-color:white; border-radius:5px;">
+            <div style="font-size:24px; font-weight:bold; display:inline-block; margin-left:40px; margin-top:70px; border-radius:5px;">계정관리</div>
+            <hr style="border: 1px solid gray; width:720px; margin-left:auto; margin-right:auto;">
+            <div style="width:730px; height:630px; border:1px solid #e9e9e9; margin-left:auto; margin-right:auto; border-radius:5px;">
+                <div style="margin-left:300px; margin-right:auto; display:inline-block;">
+                    <img src="/bootstrap/img/프로필사진.jpg" alt="" style="height:100px; width:100px; border-radius:50px; margin-top:50px;">
+                </div>
+                <div th:inline="text" style="border:1px solid #e9e9e9;  width:450px; height:50px; margin-top:40px; margin-left:auto; margin-right:auto; border-radius:50px;">
+                    <div style="font-size:20px; font-weight:bold; padding-left:20px; padding-top:8px;">[[${#httpServletRequest.remoteUser}]]</div>
+                </div>
+                <hr style="border: 1px solid gray; width:680px; margin-left:auto; margin-right:auto;">
+                <div style="font-size:20px; font-weight:bold; margin-left:350px; margin-top:10px;">닉네임</div>
+                <div style="border:1px solid #e9e9e9; width:450px; height:50px; margin-left:auto; margin-right:auto; margin-top:20px; border-radius:50px;">
+                    <!--                    <div>[[${#httpServletRequest.remoteUser}]]</div>-->
+
+                </div>
+                <!--                <span sec:authentication="name"></span> 님 반갑습니다.-->
+                <div>
+                </div>
+                <div style="border:1px solid white; width:700px; height:200px; margin-left:auto; margin-right:auto; margin-top:30px; background-color:#e9e9e9; border-radius:5px;">
+                    <a href="@{/}" style="border:1px solid gray; width:300px; height:75px; display:inline-block; margin-left:30px; margin-top:10px; background-color:white; border-radius:5px;">
+                        <div style="border:1px solid red; text-align:center;">이메일 변경</div>
+                    </a>
+                    <a href="@{/}" style="border:1px solid gray; width:300px; height:75px; display:inline-block; margin-left:30px; background-color:white;">
+                        <div style="border:1px solid red;">비밀번호 변경</div>
+                    </a>
+                    <a th:href="@{/mypage/delete}" style="border:1px solid gray; width:300px; height:75px; display:inline-block; margin-left:30px; margin-top:20px; ">
+                        <button type="submit" style="border:1px solid red;">회원탈퇴</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="Footer :: footerFragment"></div>
+</body>
+</head>
+</html>

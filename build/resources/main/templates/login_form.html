@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>새로운 여행 커뮤니티 TripBoat</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/bootstrap/img/favicon.png" rel="icon">
+    <link href="/bootstrap/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/bootstrap/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/bootstrap/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/bootstrap/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS Files -->
+    <link href="/bootstrap/css/variables.css" rel="stylesheet">
+    <link href="/bootstrap/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: ZenBlog - v1.2.1
+    * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+    * Author: BootstrapMade.com
+    * License: https:///bootstrapmade.com/license/
+    ======================================================== -->
+    <header id="header" class="header d-flex align-items-center fixed-top" style="background-color:white; box-shadow: rgba(0,0,0,0.08) 0px 1px 2px; height:80px;">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between " style="margin-top:50px;">
+
+            <a href="nav-link" th:href="@{/main}" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="/bootstrap/img/logo.png" alt=""> -->
+                <h1 style="font-family: 'Do Hyeon', sans-serif; font-weight:bold;">트립소다</h1>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="nav-link" th:href="@{/main}">커뮤니티</a></li>
+                    <li><a href="single-post.html">Single Post</a></li>
+                    <li>
+                        <a href="nav-link" th:href="@{/login}">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/signup}">회원가입</a></li>
+                </ul>
+            </nav>
+</div>
+    </header>
+<body>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <h2 style="font-weight:bold; font-size:50px; text-align:center; font-family: 'Do Hyeon', sans-serif;">로그인</h2>
+    <br/>
+    <br/>
+    <br/>
+    <form th:action="@{/login}" method ="post">
+        <div class="form-outline mb-4" style="text-align:center;">
+            <label for="username"></label>
+            <input type="text" name="username" id="username" placeholder="아이디를 입력 하세요" style="width:327px; height: 58px; border-radius:5px;">
+        </div>
+        <div class="form-outline mb-4" style="text-align: center;">
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="비밀번호를 입력 하세요" style="width:327px; height: 58px; border-radius:5px;">
+        </div>
+        <br/>
+        <br/>
+        <div class="d-flex justify-content-center" style="text-align:center; box-shadow:none;">
+<!--            <a class="nav-link" th:href="@{/main}" style="width:327px; height: 58px; border-radius:5px; font-weight:bold; font-size: 20px; background-color:#00ce7c; color:white; font-family: 'Do Hyeon', sans-serif;">-->
+<!--                로그인</a>-->
+            <button type="submit" style="width:327px; height: 58px; border-radius:5px; font-weight:bold; font-size: 20px; background-color:#00ce7c; color:white; font-family: 'Do Hyeon', sans-serif;
+" >로그인</button>
+        </div>
+        <div style="font-family: 'Do Hyeon', sans-serif; font-size:20px; width:327px; height:20px; text-align:right; margin-left:auto; margin-right:auto; margin-top:20px;">
+            <a class="nav-link" th:href="@{/signup}">회원가입</a>
+        </div>
+        <div style="width:500px; margin-left:auto; margin-right:auto; margin-top:1px;">
+            <img src="/bootstrap/img/로그인캐릭터.jpg" alt="">
+        </div>
+        <footer style="width:100%; min-width:1200px; height:414px; display:flex; position:relative;
+        box-sizing: border-box; border-top-width:1px; border-top-style:solid; border-top-color:rgb(233,233,233); padding-bottom:49px; ">
+            <div style="position:relative; padding-top:50px; padding-right:0px; padding-left:120px; padding-bottom:0px;
+            box-sizing:border-box; width:1200px; margin-top:0px; margin-right:auto;">
+                <h2 style="font-family: 'Do Hyeon', sans-serif; font-weight:bold;">트립소다</h2>
+                <div style="display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; margin-top:26px; color:rgb(106,106,106); align-items:center;" >
+                    <div style="font-size:20px; font-weight:bold; margin-right:15px;">고객센터 042-777-7777</div>
+                    <div style="font-weight:700px; font-size:20px;margin-right:15px;">유선상담</div>
+                    <div style="font-weight:400px; font-size:17px;margin-right:15px;">10:00 ~ 17:50 (12:00 ~ 13:00 제외)</div>
+                    <div style="font-weight:700px; font-size:20px;margin-right:15px;">주말 상담</div>
+                    <div style="font-weight:400px; font-size:17px;margin-right:15px;">13:00 ~ 17:00 (오전 상담은 불가합니다.)</div>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; margin-top:10px; color:rgb(106,106,106); align-items:center;" >
+                    <div style="font-size:16px; font-weight:400px; margin-right:15px;">주식회사 TripBoat</div>
+                    <div style="font-size:16px; font-weight:400px;margin-right:15px;">대표는 없음</div>
+                    <div style="font-size:16px; font-weight:400px;margin-right:15px;">개인정보보호책임자 없음</div>
+                    <div style="font-size:16px; font-weight:400px;margin-right:15px;">사업자등록번호 327-88-115587</div>
+                    <div style="font-size:16px; font-weight:400px;margin-right:15px;">관광사업등록번호 26001-2021-00001</div>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; margin-top:5px; color:rgb(106,106,106); align-items:center;" >
+                    <div style="font-size:16px; font-weight:400px; margin-right:15px;">통신판매업 신고번호 2020-대전서구-1588</div>
+                    <div style="font-size:16px; font-weight:400px; margin-right:15px;">대전 서구 대덕대로 179</div>
+                    <div style="font-size:16px; font-weight:400px; margin-right:15px;">Trip@TripBoat.com</div>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; margin-top:18px; color:rgb(106,106,106); align-items:center;" >
+                    <div style="font-size:16px; font-weight:bold; ">개인정보처리방침</div>
+                    <div>|</div>
+                    <div style="font-size:16px; font-weight:400px;">이용약관</div>
+                    <div>|</div>
+                    <div style="font-size:16px; font-weight:400px;">취소 및 환불정책</div>
+                    <div>|</div>
+                    <div style="font-size:16px; font-weight:400px;">파트너 입점</div>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; margin-top:18px; color:rgb(106,106,106); align-items:center;" >
+                    <div style="font-size:16px; font-weight:400px; color: gray;">자사는 서울특별시관광협회 공제영업보증보험에 가입되어 있습니다.</div>
+                    <div style="font-size:16px; font-weight:400px; color: gray;">TripBoat는 통신판매중개자이며 통신판매 당사자가 아닙니다. 상품정보 및 거래에 관한 책임은 판매자에게 있습니다.</div>
+                </div>
+                <div style="display:flex; flex-warp:wrap; row-gap:10px; column-gap:10px; margin-top:10px; color:rgb(106,106,106); align-items:center;">
+                    <div style="font-size:16px; font-weight:400px; color: gray;">Copyright © TRIPSODA Inc. All Rights Reserved.</div>
+                </div>
+        </footer>
+        </form>
+</body>
+</head>
+</html>

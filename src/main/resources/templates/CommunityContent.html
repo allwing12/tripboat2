@@ -1,0 +1,86 @@
+<html layout:decorate="~{layout}">
+
+<body>
+<div layout:fragment="content">
+
+    <!--    글 상세-->
+    <div style="display:flex; justify-content:center;">
+        <div style="height:400px; width:500px; border:solid 3px black;">
+            제목:<h1 th:text="${community.subject}"></h1>
+            내용:<h3 th:text="${community.content}"></h3>
+            지역:<h5 th:text="${community.region}"></h5>
+        </div>
+    </div>
+    <!--    글 상세 끝-->
+
+    <!--    글 수정 및 삭제-->
+    <div>
+        <a th:href="@{|/writer/modify/${community.id}|}" class="btn btn-sm btn-outline-secondary"
+           sec:authorize="isAuthenticated()"
+           th:if="${community.author != null and #authentication.getPrincipal().getUsername() == community.author.username}"
+           th:text="수정"></a>
+    </div>
+    <div>
+        <a href="javascript:void(0);" th:data-uri="@{|/writer/delete/${community.id}|}"
+           class="delete btn btn-sm btn-outline-secondary" sec:authorize="isAuthenticated()"
+           th:if="${community.author != null and #authentication.getPrincipal().getUsername() == community.author.username}"
+           th:text="삭제"></a>
+    </div>
+    <!--    글 수정 및 삭제 끝-->
+
+
+    <!--    코멘트시작-->
+    <div style="border:solid 2px red; display:flex; justify-content:center;">
+        <div style="border:solid 2px gold; width:60%;">
+            <!--        코멘트 갯수-->
+            <div th:text="|${#lists.size(community.commentList)}개의 답변이 있습니다.|" style="font-weight:bold; font-size:1.5rem; height:100px; display:flex; flex-wrap:wrap"></div>
+
+            <!--        코멘트 등록-->
+            <form th:action="@{|/comment/create/${community.id}|}" th:object="${commentForm}" method="post">
+                <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+                    <div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+                </div>
+
+                <textarea th:field="*{content}" name="content" id="content" style="width:90%"></textarea>
+                <input type="submit" value="답변등록">
+            </form>
+
+            <!--        코멘트 정보 및 내용-->
+            <div style="border:solid 2px blue;" th:each="comment : ${community.commentList}">
+                <div>
+                    <div th:if="${community.author != null}" th:text="${community.author.nickname}"></div>
+                </div>
+                <div th:text="${comment.content}" style="border:2px solid red; display:inline-block;">
+                </div>
+                <div th:text="${#temporals.format(comment.createDate, 'yyyy-MM-dd HH:mm')}"  style="border:2px solid red;"></div>
+                <!--        <input type="button" value="수정" style="border:solid 2px blue; " sec:authorize="isAuthenticated()" th:if="${community.author != null and #authentication.getPrincipal().getUsername() == community.author.username}">-->
+
+                <div class="my-3">
+                    <a class="btn btn-sm btn-outline-secondary"
+                       a th:href="@{|/comment/modify/${comment.id}|}"
+                       sec:authorize="isAuthenticated()"
+                       th:if="${comment.author != null and #authentication.getPrincipal().getUsername() == comment.author.username}"
+                       th:text="수정"></a>
+
+                    <a href="javascript:void(0);" th:data-uri="@{|/comment/delete/${comment.id}|}"
+                       class="delete btn btn-sm btn-outline-secondary" sec:authorize="isAuthenticated()"
+                       th:if="${comment.author != null and #authentication.getPrincipal().getUsername() == comment.author.username}"
+                       th:text="삭제"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script layout:fragment="script" type='text/javascript'>
+    const delete_elements = document.getElementsByClassName("delete");
+    Array.from(delete_elements).forEach(function(element) {
+        element.addEventListener('click', function() {
+            if(confirm("정말로 삭제하시겠습니까?")) {
+                location.href = this.dataset.uri;
+            };
+        });
+    });
+</script>
+</html>

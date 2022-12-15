@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<body>
+<th:block th:fragment="NavBarFragment">
+
+    <div class="header">
+        <div class="home-container">
+            <nav class="home-logo">
+                <a class="nav-link" th:href="@{/main}">Trip Soda</a>
+            </nav>
+
+            <nav class="navbar">
+                <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" style=" font-weight:bold; font-size:18px;">로그인</a>
+                <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" style=" font-weight:bold; font-size:18px;">로그아웃</a>
+                <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/signup}" style="font-weight:bold; font-size:18px; " >회원가입</a>
+                <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/mypage}" style=" font-weight:bold; font-size:18px;">마이페이지</a>
+                <button class="writer-button" th:onclick="|location.href='@{/writer/content}'|"> 글쓰기</button>
+            </nav>
+            <div class="bottom-navbar" style="">
+                <a class="nav-link" id="homeBtn" th:href="@{/main}">메인</a>
+                <a class="nav-link" id="communityBtn" th:href="@{/community}">커뮤니티</a>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+
+</html>

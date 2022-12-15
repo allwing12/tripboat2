@@ -1,0 +1,74 @@
+<html layout:decorate="~{layout}">
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+
+<div layout:fragment="content">
+
+    <body>
+    <div>
+        <div style="width:500px; margin-left:auto; margin-right:auto; margin-top:20%;">
+            <img src="/bootstrap/img/로그인캐릭터.jpg" alt="">
+        </div>
+    </div>
+    <div style="border:solid 2px green; width:80%; height:300px; margin:0 auto 40px auto;">
+        <a href="#" style="font-size:25px; margin-right:20px; font-family: 'Do Hyeon', sans-serif;">서울</a>
+        <a href="#" style="font-size:25px; margin-right:20px; font-family: 'Do Hyeon', sans-serif;">인천</a>
+        <a href="#" style="font-size:25px; margin-right:20px; font-family: 'Do Hyeon', sans-serif;">대전</a>
+        <a href="#" style="font-size:25px; margin-right:20px; font-family: 'Do Hyeon', sans-serif;">대구</a>
+        <a href="#" style="font-size:25px; margin-right:20px; font-family: 'Do Hyeon', sans-serif;">광주</a>
+        <a href="#" style="font-size:25px; margin-right:20px; font-family: 'Do Hyeon', sans-serif;">울산</a>
+        <a href="#" style="font-size:25px; margin-right:20px; font-family: 'Do Hyeon', sans-serif;">부산</a>
+    </div>
+                <form action="img" method="post" enctype="multipart/form-data">
+                    <div class="button" style="display:flex; justify-content: center;">
+                        <div style="width:80%; height:300px; border:1px solid rgb(219,219,219); display:flex; margin-bottom:-60px; background-color:rgb(240,240,240); border-radius:5px;">
+                            <intput type="file" class="form-control form-control-sm" name="file" id="file" style="cursor:pointer; font-size:1em; width:100%; height:100%; text-align:center; padding-top:150px; color:rgb(150,150,150) font-family: 'Do Hyeon', sans-serif;">
+                                파일을 업로드 해주세요
+                            </intput>
+                        </div>
+                    </div>
+<!--                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)" style="visibility: hidden; justify-content: center;">-->
+                </form>
+    <!--텍스트-->
+    <div style="margin-top:5%;">
+
+        <!--      제목-->
+        <form th:action="@{/writer/content}" th:object="${communityForm}" method="post" style=" width:80%; margin:0 auto; display:flex; flex-wrap:wrap;">
+
+<!--            배경사진-->
+
+<!--            <div th:if="${#fields.hasAnyErrors()}">-->
+<!--                <div class="alert" role="alert" th:each="err : ${#fields.allErrors()}" th:text="${err}" />-->
+<!--            </div>-->
+            <input type="text" name="subject" id="subject" th:field="*{subject}" style="height:70px; width:100%; border-radius:5px;
+            font-size:20px; border:1px solid gray; border-color:rgb(233,233,233); margin-bottom:21px; padding:15px; font-family: 'Do Hyeon', sans-serif;" placeholder="제목을 입력하세요"></input>
+            <div th:if="${#fields.hasErrors('subject')}">
+                <p th:errors="*{subject}" style="color:red; margin-top:73px; position:absolute; font-size:18px; font-weight:300; margin-left:-1150px; font-family: 'Do Hyeon', sans-serif;"></p>
+            </div>
+            <div style="width:100%; height:50px;">
+                <hr>
+            </div>
+            <div th:if="${#fields.hasErrors('content')}">
+                <p th:errors="*{content}" style="color:red; margin-top:23px; position:absolute; font-size:18px; font-weight:300; margin-left:-1150px; font-family: 'Do Hyeon', sans-serif;"></p>
+            </div>
+            <textarea name="content" id="content" th:field="*{content}" style="width:100%; margin-top :10px;height:600px; border-radius:5px; font-size:20px; padding:15px; border:1px solid rgb(219,219,219); outline-color: blue; resize:none; font-family: 'Do Hyeon', sans-serif;"
+                      placeholder="내용을 입력하세요"></textarea>
+            <input type="button" onclick="location.href='/main';" value="취소" style="width:500px; height:50px; border-radius:5px; margin-top:100px; margin-right:50px; background-color:rgb(219,219,219); border:1px solid white; color:white; font-family: 'Do Hyeon', sans-serif;">
+            <input type="submit" value="저장하기" style="width:500px; height:50px; border-radius:5px; margin-top:100px; margin-left:80px; background-color:#00ce7c; color:white; border:1px solid white; font-family: 'Do Hyeon', sans-serif;">
+
+        </form>
+
+    </div>
+
+    </body>
+
+</div>
+
+</html>

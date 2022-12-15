@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>ZenBlog Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/bootstrap/img/favicon.png" rel="icon">
+    <link href="/bootstrap/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/bootstrap/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/bootstrap/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/bootstrap/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS Files -->
+    <link href="/bootstrap/css/variables.css" rel="stylesheet">
+    <link href="/bootstrap/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: ZenBlog - v1.2.1
+    * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+    * Author: BootstrapMade.com
+    * License: https:///bootstrapmade.com/license/
+    ======================================================== -->
+    <header id="header" class="header d-flex align-items-center fixed-top" style="background-color:white; box-shadow: rgba(0,0,0,0.08) 0px 1px 2px; height:80px;">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between " style="margin-top:50px;">
+
+            <a href="nav-link" th:href="@{/main}" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="/bootstrap/img/logo.png" alt=""> -->
+                <h1 style="font-family: 'Do Hyeon', sans-serif; font-weight:bold;">트립소다</h1>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="nav-link" th:href="@{/main}">커뮤니티</a></li>
+                    <li><a href="single-post.html">Single Post</a></li>
+                    <li>
+                        <a href="nav-link" th:href="@{/login}">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/signup}">회원가입</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <body>
+<section class="vh-5500 bg-image"
+         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<!--    <div class="mask d-flex align-items-center h-100 gradient-custom-3">-->
+        <div class="container h-5500">
+            <div class="row d-flex justify-content-center align-items-center h-5500">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <h2 style="font-weight:bold; font-size:40px; font-family: 'Do Hyeon', sans-serif; text-align:center;">회원가입</h2>
+                            <br/>
+                            <br/>
+                            <form th:action="@{/signup}" th:object="${userCreateForm}" method ="post">
+                                <div class="form-outline mb-4" style="text-align:center;">
+                                    <label for="username"></label>
+                                    <input type="text" th:field="*{username}" placeholder="아이디를 입력 하세요" style="width:300px; height: 50px; border-radius:10px;">
+                                </div>
+                                <div class="form-outline mb-4" style="text-align: center;">
+                                    <label for="password1"></label>
+                                    <input type="password" th:field="*{password1}" placeholder="비밀번호를 입력 하세요" style="width:300px; height: 50px; border-radius:10px;">
+                                </div>
+                                <div class="form-outline mb-4" style="text-align: center;">
+                                    <label for="password2"></label>
+                                    <input type="password" th:field="*{password2}" placeholder="비밀번호를 다시 한 번 입력하세요" style="width:300px; height: 50px; border-radius:10px;">
+                                </div>
+                                <div class="form-outline mb-4" style="text-align: center;">
+                                    <label for="email"></label>
+                                    <input type="email" th:field="*{email}" placeholder="이메일을 입력 하세요" style="width:300px; height: 50px; border-radius:10px;">
+                                </div>
+                                <br/>
+                                <div class="d-flex justify-content-center" style="text-align:center;">
+                                    <button type="submit" style="width:300px; height: 50px; border-radius:10px; font-weight:bold;
+                                    font-size: 30px; background-color:#00ce7c; font-family: 'Do Hyeon', sans-serif; color:white;" >회원가입</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </body>
+</head>
+</html>
